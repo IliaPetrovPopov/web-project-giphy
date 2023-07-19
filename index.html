@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GIFetcher</title>
+  </head>
+  <body id="wrapper">
+    <div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+    </div>
+
+    <div id="main-page">
+      <div id="content-display">
+
+        <svg id="page-title" width="300px" height="120px">
+          <text x="0%" y="50%" dy=".30em">
+            GIFetcher
+          </text>
+        </svg>
+        
+        <ul id="sections">
+          <button id="trending-tab" class="tabs">Trending</button>
+          <button id="favorites-tab" class="tabs">Favorites</button>
+          <button id="uploaded-gifs-tab" class="tabs">Uploaded</button>
+          <button id="about-tab" class="tabs">About</button>
+        </ul>
+
+        <span id="upload-container">
+          <button id="upload-button">Upload</button>
+          <input
+            type="file"
+            id="file-input"
+            style="display: none"
+            accept=".gif"
+          />
+        </span>
+
+        <form id="search-box">
+          <input id="search-input" type="text" placeholder="Try searching..." />
+          <button id="search-button" type="submit">Search</button>
+        </form>
+      </div>
+      <div id="gif-list" class="gif-list-container">
+        <div id="home-page">
+          <h4>Dive into a sea of GIFs</h4>
+          <p>discover what's trending, check out a collection of your
+          favorites, or search whatever you like - it's all one click away!
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
