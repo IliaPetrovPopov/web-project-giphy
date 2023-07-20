@@ -1,0 +1,457 @@
+body {
+    padding: 2.8cm;
+    margin: auto;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: auto;
+    background: linear-gradient(
+      315deg,
+      rgba(101, 0, 94, 1) 3%,
+      rgba(60, 132, 206, 1) 38%,
+      rgba(48, 238, 226, 1) 68%,
+      rgb(217, 138, 203) 98%
+    );
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+  
+  .wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+  }
+  
+  .wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+  }
+  
+  @keyframes wave {
+    2% {
+      transform: translateX(1);
+    }
+  
+    25% {
+      transform: translateX(-25%);
+    }
+  
+    50% {
+      transform: translateX(-50%);
+    }
+  
+    75% {
+      transform: translateX(-25%);
+    }
+  
+    100% {
+      transform: translateX(1);
+    }
+  }
+  
+  #main-page {
+    border-radius: 2cm;
+    padding: 2cm;
+    padding-top: 1.3cm;
+    height: auto;
+    width: auto;
+    background-color: rgb(230, 249, 250);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #page-title {
+    font-family: "Russo One", sans-serif;
+    animation: stroke 5s infinite alternate;
+    animation-iteration-count: 7;
+    stroke-width: 2;
+    stroke: #365fa0;
+    font-size: 1.3cm;
+    margin-right: 0.3cm;
+    margin-left: 0.5cm;
+  }
+  
+  @keyframes stroke {
+    0% {
+      fill: rgba(72, 138, 20, 0);
+      stroke: rgb(16, 51, 107);
+      stroke-dashoffset: 25%;
+      stroke-dasharray: 0 50%;
+      stroke-width: 2;
+    }
+    70% {
+      fill: rgba(72, 138, 20, 0);
+      stroke: rgb(16, 51, 107);
+    }
+    80% {
+      fill: rgba(72, 138, 20, 0);
+      stroke: rgb(16, 51, 107);
+      stroke-width: 3;
+    }
+    100% {
+      fill: rgb(16, 51, 107);
+      stroke: rgba(54, 95, 160, 0);
+      stroke-dashoffset: -25%;
+      stroke-dasharray: 50% 0;
+      stroke-width: 0;
+    }
+  }
+  
+  #page-title:hover {
+    cursor: pointer;
+  }
+  
+  #content-display {
+    font-weight: normal;
+    font-size: larger;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.2cm;
+    border: 1px groove rgb(122, 214, 251);
+    border-radius: 2cm;
+    padding-left: 0.8cm;
+    padding-right: 0.8cm;
+    background-color: rgb(199, 242, 252);
+  }
+  
+  #sections {
+    color: rgb(16, 51, 107);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    margin-right: 1.5cm;
+    gap: 5px;
+  }
+  
+  #search-box {
+    display: flex;
+  }
+  
+  #search-box input[type="text"] {
+    padding: 10px;
+    font-size: 13px;
+    border: 2px solid rgb(151, 58, 134);
+    width: 100px;
+    background: linear-gradient(
+      to right,
+      rgb(244, 207, 237) 30%,
+      rgb(195, 226, 252)
+    );
+    margin-left: 15px;
+    border-radius: 10px 0px 0px 10px;
+  }
+  
+  #search-input:focus {
+    outline: 1px solid purple;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border: 1px solid;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+    transition-duration: 0.9s;
+  }
+  
+  #search-button {
+    background: linear-gradient(
+      to right,
+      rgb(157, 64, 140) 30%,
+      rgb(47, 137, 216)
+    );
+    border: white;
+    border-radius: 0px 10px 10px 0px;
+  }
+  
+  #upload-button {
+    border: 1px solid;
+    border-radius: 10px;
+    margin-right: 15px;
+    position: relative;
+    color: white;
+    background-image: none;
+    background-image: linear-gradient(
+      to right,
+      rgb(135, 57, 121) 30%,
+      rgb(47, 137, 216)
+    );
+  }
+  
+  #search-button:hover {
+    background: #996fd9;
+  }
+  #search-button:active {
+    background-color: linear-gradient(
+      to right,
+      rgb(235, 183, 226) 30%,
+      rgb(156, 196, 229)
+    );
+    box-shadow: 6px 6px 6px rgb(255, 255, 255);
+    transform: translateY(2px);
+  }
+  
+  #upload-button:hover {
+    font-size: 16px;
+    transition: all 0.5s ease;
+    background-image: linear-gradient(
+      to right,
+      rgb(103, 42, 92) 30%,
+      rgb(23, 65, 102)
+    );
+  }
+  
+  #upload-button:active {
+    background-color: rgb(104, 104, 203);
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 1);
+    transform: translateY(2px);
+  }
+  
+  .gif-list-container {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 1200px;
+  
+    display: grid;
+    gap: 10px 6px;
+    grid-template-columns: 25% 25% 25% 25%;
+    justify-items: center;
+  }
+  .gif-item {
+    width: 97%;
+    max-height: 6cm;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s ease-in-out;
+    position: static;
+  }
+  .gif-item img {
+    width: 100%;
+    height: 100%; /* might need editing */
+    object-fit: cover;
+    position: initial;
+  }
+  .gif-item:hover {
+    transform: scale(1.1);
+  }
+  
+  .fav-button {
+    background-color: rgba(243, 243, 234, 0.597);
+    background-size: 100%;
+    font-size: large;
+    text-align: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    color: red;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+  }
+  
+  .fav-button:active {
+    background-color: rgba(243, 243, 234, 0.727);
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 1);
+    transform: translateY(3px);
+  }
+  
+  #uploaded-gifs-tab:hover {
+    cursor: pointer;
+  }
+  
+  .gif-item:hover .fav-button {
+    opacity: 1;
+  }
+  
+  .info-button {
+    background-color: rgba(243, 243, 234, 0.727);
+    background-size: 100%;
+    font-size: large;
+    text-align: center;
+    width: 25px;
+    height: 25px;
+    color: purple;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    cursor: help;
+  }
+  
+  .info-button:active {
+    background-color: rgba(243, 243, 234);
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 1);
+    transform: translateY(3px);
+  }
+  
+  .gif-item:hover .info-button {
+    opacity: 1;
+  }
+  
+  #about-page {
+    grid-column: 1 / span 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(71, 148, 216, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.442);
+    width: 800px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  }
+  
+  #about-page h2 {
+    font-size: x-large;
+    color: #000000;
+  }
+  
+  #about-page h3 {
+    font-size: x-large;
+    margin-bottom: 3px;
+    color: #000000;
+  }
+  
+  #about-page p {
+    font-size: larger;
+    margin-bottom: 10px;
+    color: #000000;
+    text-align: center;
+  }
+  
+  #home-page {
+    grid-column: 1 / span 4;
+    background-color: rgba(255, 160, 238, 0.5);
+    border-radius: 8px;
+    padding: 20px;
+    color: #000000;
+    font-size: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.442);
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-size: x-large;
+  }
+  
+  #sections button {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    padding: 9px;
+    position: relative;
+    font-size: 20px; /* could be changed */
+    font-weight: 550;
+  }
+  
+  #sections button::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-image: linear-gradient(
+      to right,
+      rgb(255, 160, 238) 30%,
+      rgb(11, 123, 220)
+    );
+    background-clip: padding-box;
+  }
+  
+  #sections button:hover {
+    transition: all 0.5s ease;
+    background-image: linear-gradient(
+      to right,
+      rgb(214, 162, 205) 30%,
+      rgb(71, 149, 216)
+    );
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    padding: 10px;
+    outline: none;
+  }
+  
+  #upload-container {
+    margin-right: 5px;
+  }
+  
+  #upload-page {
+    grid-column: 1 / span 2;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-size: 24px;
+    margin-top: 30px;
+    padding: 2%;
+  }
+  
+  #random-gif-page {
+    grid-column: 1 / span 2;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-size: 24px;
+    margin-top: 30px;
+    padding: 2%;
+  }
+  
+  #just-uploaded {
+    grid-column: 2;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 30px;
+    /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); */
+  }
+  
+  #detailed-view {
+    grid-column: 3 / span 2;
+    margin-left: 2cm;
+    align-items: left;
+  }
+  
+  #detailed-gif {
+    grid-column: 2;
+    margin-left: 2cm;
+    align-items: left;
+  }
+  
+  strong {
+    font-size: larger;
+  }
+  
